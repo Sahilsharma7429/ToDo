@@ -1,0 +1,65 @@
+<div class=" bg-complete">
+<div class="row">
+  <div class="col-sm-6 mx-auto">
+    <div class="card text-center">
+  <div class="card-header ">
+    <h4 class="text-center" style="color: blue;">To Do App</h4>
+  </div>
+  <div class="card-body">
+    <div class="form-container">
+      <form [formGroup]="todoForm" (ngSubmit)="addTodo()" ><div class="field">
+           <input [(ngModel)]="namefieldInput" class="input-name" formControlName="name" type="text" >
+           <label class=" name-label">Your Name</label></div>
+          <div class="field">
+          <input [(ngModel)]="taskfieldInput" class="input-task" formControlName="task" type="text" >
+          <label class=" task-label">Task Name</label>
+  
+          </div>
+          <label class=" status-label">Status</label>
+          <div  class="switch-field " >
+            
+              <input  type="radio" formControlName="status" id="radio-three" name="status" value="pending" checked/>
+              <label for="radio-three">Pending</label>
+              <input type="radio" formControlName="status" id="radio-four" name="status" value="ongoing" />
+              <label for="radio-four">Ongoing</label>
+              <input type="radio" formControlName="status" id="radio-five" name="status" value="completed" />
+              <label for="radio-five">Completed</label>
+          </div>
+          <div class="center">  <button class="btn btn-primary"  [disabled]="!namefieldInput || !taskfieldInput"  type="submit">Submit</button></div>
+        
+      </form>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Task</th>
+        <th scope="col">Status</th>
+        <th scope="col">Created Date</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let task of taskdata">
+      <tr>
+        <td scope="col">{{ task.name }}</td>
+        <td scope="row">{{ task.task }}</td>
+        <td scope="row" 
+        [class.pending]=" task.status == 'pending' "
+        [class.ongoing]=" task.status == 'ongoing' "
+        [class.completed]=" task.status == 'completed' "
+         ><i class="fas fa-dot-circle" placement="right" ngbTooltip= {{task.status}} ></i></td>
+        <td scope="col">{{ task.Created_date | date:"dd-MM-yyyy  hh:mm a"}}</td>
+        <td scope="col"> <i class="fas fa-trash-alt" style="cursor: pointer;" (click)= "deleteTodoTAsk(task._id)"></i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

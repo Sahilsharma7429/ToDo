@@ -1,0 +1,135 @@
+.bg-complete{
+  
+   
+    background-image: linear-gradient(to bottom right, #7e7c7c, #5c8cb3);
+  
+}
+thead{
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to top , rgb(53, 52, 52), #86b5dc);
+
+}
+
+
+// for status toggle
+.switch-field {
+	display: flex;
+	margin-bottom: 36px;
+	overflow: hidden;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #e4e4e4;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+.switch-field input:checked + label {
+	background-color: #86b5dc;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}
+
+//form placement
+
+form {
+
+	max-width: 600px;
+	font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+	font-weight: normal;
+	line-height: 1.625;
+	margin: 8px auto;
+	padding: 16px;
+}
+
+
+.form-container{
+    background-color: #7e7c7c;
+    display: flex;
+    input{
+        display: inline-block;
+        margin: 4px;
+    }
+}
+
+
+  //for label movement
+
+  .field{
+    position: relative;
+    margin-top:20px;
+  }
+  //for name input field
+
+  .input-name ~ .name-label, .input-name:not(:placeholder-shown) ~ .name-label {
+    top:-13px;
+    font-size:12px;
+  
+  }
+  .name-label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 2px;
+    transition: 0.2s ease all;
+    font-size: 15px;
+  }
+  //for task input field
+  .task-label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 2px;
+    transition: 0.2s ease all;
+    font-size: 15px;
+  }
+  .input-task ~ .task-label, .input-task:not(:placeholder-shown) ~ .task-label {
+    top:-13px;
+    font-size:12px;
+  }
+  //for status
+
+.status-label{
+  font-size: 12px;
+}
+
+.pending{
+  color: rgb(231, 117, 117);
+}
+.ongoing{
+  color: rgb(223, 223, 128);
+}
+.completed{
+  color: rgb(87, 216, 87);
+}
+input{
+  border-radius: 8px;
+  box-shadow: rgb(231, 117, 117);
+}
